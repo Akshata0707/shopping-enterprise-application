@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+          - id: order-service
+server:
+  port: 8088
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+#for dynamic routing and gateway autocreates routs from Eureka services
+#spring.cloud.gateway.server.webflux.discovery.locator.enabled=true 
+
